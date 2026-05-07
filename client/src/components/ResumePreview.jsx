@@ -5,7 +5,9 @@ import MinimalImageTemplate from './templates/MinimalImageTemplate'
 import MinimalTemplate from './templates/MinimalTemplate'
 
 const ResumePreview = ({ data, template, accentColor, classes = '' }) => {
+    
     console.log("FINAL DATA →", data);
+    console.log(data.projects)
 
     const renderTemplate = () => {
         switch (template) {

@@ -111,7 +111,8 @@ Return ONLY valid JSON in this format:
     {
       "name": "",
       "type": "",
-      "description": ""
+      "description": "",
+      "link":""
     }
   ],
   "education": [

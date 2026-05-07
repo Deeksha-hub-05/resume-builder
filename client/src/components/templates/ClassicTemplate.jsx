@@ -126,29 +126,59 @@ const ClassicTemplate = ({ data, accentColor }) => {
 
 
 
-            {/* Projects */}
-            {data.projects && data.projects.length > 0 && (
-                <section className="mb-6">
-                    <h2 className="text-sm font-semibold mb-4" style={{ color: accentColor }}>
-                        PROJECTS
-                    </h2>
+           {/* Projects */}
+{/* Projects */}
+{data.projects && data.projects.length > 0 && (
+    <section className="mb-6">
+        <h2
+            className="text-sm font-semibold mb-4"
+            style={{ color: accentColor }}
+        >
+            PROJECTS
+        </h2>
 
-                    <ul className="space-y-3 ">
-                        {data.projects.map((proj, index) => (
-                            <div key={index} className="flex justify-between items-start border-l-3 border-gray-300 pl-6">
-                                <div>
-                                    <li className="font-semibold text-[14px] text-gray-800 ">{proj.name}</li>
-                                  <ul className="list-disc pl-5 text-black-600 text-[10px] space-y-1">
-                                   {proj.description?.split('\n').map((point, i) => (
-                                     point.trim() && <li key={i}>{point}</li>
-                                     ))}
-                                   </ul>
-                                </div>
-                            </div>
-                        ))}
-                    </ul>
-                </section>
-            )}
+        <ul className="space-y-3">
+            {data.projects.map((proj, index) => (
+                <div
+                    key={index}
+                    className="flex justify-between items-start border-l-3 border-gray-300 pl-6"
+                >
+                    <div>
+                        {/* Title + Link */}
+                        <div className="flex items-center gap-2 flex-wrap">
+                            <li className="font-semibold text-[14px] text-gray-800">
+                                {proj.name}
+                            </li>
+
+                            {proj.link && (
+                                <a
+                                    href={proj.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-blue-600 text-[11px] underline"
+                                >
+                                    Live Link
+                                </a>
+                            )}
+                        </div>
+
+                        {/* Description */}
+                        <ul className="list-disc pl-5 text-black-600 text-[10px] space-y-1 mt-1">
+                            {proj.description
+                                ?.split('\n')
+                                .map(
+                                    (point, i) =>
+                                        point.trim() && (
+                                            <li key={i}>{point}</li>
+                                        )
+                                )}
+                        </ul>
+                    </div>
+                </div>
+            ))}
+        </ul>
+    </section>
+)}
   {/* Experience */}
             {data.experience && data.experience.length > 0 && (
                 <section className="mb-6">
